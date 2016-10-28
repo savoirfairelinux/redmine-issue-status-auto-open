@@ -3,17 +3,33 @@ require_dependency 'time_entry'
 
 module AutoOpenIssueOfTimeEntryPatch
 
-    def auto_open_issue
-        unless valid? then return end
-        issue_status_open = IssueStatus.find(Setting.plugin_sfl_issue_status_auto_open['open_issue_status'])
-        if new_record? and hours > 0 and self.issue.status.position < issue_status_open.position then
-            if self.issue.parent and self.issue.parent.status.position < issue_status_open.position then
-                self.issue.parent.status = issue_status_open
-                self.issue.parent.save!
-            end
-            self.issue.status = issue_status_open
-            self.issue.save!
+    def set_status_if_needed(issue, issue_status)
+
+        if issue.status.position < issue_status.position then
+            issue.init_journal User.current
+            issue.status = issue_status
+            issue.save!
         end
+
+    end
+
+    def auto_open_issue
+
+        unless valid? then return end
+        unless Setting.plugin_sfl_issue_status_auto_open['open_issue_status'] then return end
+
+        issue_status_open = IssueStatus.find Setting.plugin_sfl_issue_status_auto_open['open_issue_status']
+
+        if new_record? and hours > 0 then
+        
+            set_status_if_needed self.issue, issue_status_open
+
+            if self.issue.parent then
+                set_status_if_needed self.issue.parent, issue_status_open
+            end
+
+        end
+
     end
 
     def save(*args)
@@ -29,4 +45,3 @@ module AutoOpenIssueOfTimeEntryPatch
 end
 
 TimeEntry.send(:include, AutoOpenIssueOfTimeEntryPatch)
-
