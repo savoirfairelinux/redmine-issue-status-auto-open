@@ -2,13 +2,7 @@ require 'redmine'
 
 require 'auto_open_issue_of_time_entry_patch'
 
-if Rails::VERSION::MAJOR < 3
-    require 'dispatcher'
-    object_to_prepare = Dispatcher
-else
-    object_to_prepare = Rails.configuration
-end
-
+object_to_prepare = Rails.configuration
 Redmine::Plugin.register :sfl_issue_status_auto_open do
 
     name 'SFL Issue Status Auto Open'
