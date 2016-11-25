@@ -42,9 +42,9 @@ module AutoOpenIssueOfTimeEntryPatch
     def auto_open_issue
 
         unless valid? then return end
-        unless Setting.plugin_sfl_issue_status_auto_open['open_issue_status'] then return end
+        unless Setting.plugin_redmine_issue_status_auto_open['open_issue_status'] then return end
 
-        issue_status_open = IssueStatus.find Setting.plugin_sfl_issue_status_auto_open['open_issue_status']
+        issue_status_open = IssueStatus.find Setting.plugin_redmine_issue_status_auto_open['open_issue_status']
 
         if new_record? and hours > 0 then
 
