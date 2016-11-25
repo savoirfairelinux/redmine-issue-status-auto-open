@@ -1,7 +1,7 @@
-<h1>
-  SFL Issue Status Auto Open Settings
-</h1>
+<h1>Issue Status Auto Open Settings</h1>
 
+<br/>
 <p>
-  <label>"Open" Issue Status</label><%= select_tag("settings[open_issue_status]", options_from_collection_for_select(IssueStatus.all, :id, :name, @settings[:open_issue_status])) %>
+  <label><%= l(:open_issue_status) %></label><%= select_tag("settings[open_issue_status]", options_from_collection_for_select(IssueStatus.all, :id, :name, @settings[:open_issue_status])) %>
 </p>
+<br/>

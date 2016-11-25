@@ -1,4 +1,3 @@
-# coding: utf-8
 #
 #    Copyright (C) 2014 Savoir-faire Linux Inc. (<www.savoirfairelinux.com>).
 #
@@ -15,20 +14,17 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#
 require 'redmine'
-
 require 'auto_open_issue_of_time_entry_patch'
 
-object_to_prepare = Rails.configuration
-Redmine::Plugin.register :sfl_issue_status_auto_open do
+Redmine::Plugin.register :redmine_issue_status_auto_open do
 
-    name 'SFL Issue Status Auto Open'
-    author 'David Côté-Tremblay'
+    name 'Redmine Issue Status Auto Open'
+    author 'Savoir-faire Linux'
     description 'Automatically switch status to "open" when someone spent time on a task, but also open its parent issue.'
-    version '0.0.1'
-    url 'https://gitlab.savoirfairelinux.com/redmine/SFL-Issue-Status-Auto-Open'
-    author_url 'http://savoirfairelinux.com'
+    version '0.1.0'
+    url 'https://github.com/savoirfairelinux/redmine-issue-status-auto-open'
+    author_url 'https://www.savoirfairelinux.com/'
 
     settings :default => {
         'open_issue_status' => nil,

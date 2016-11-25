@@ -1,8 +1,0 @@
-= SFL Issue Status Auto Open
-== Savoir-faire Linux
-
-Automatically switch status to "open" when someone spent time on a task, but also open its parent issue.
-
-Authors : David Côté-Tremblay
-
-https://savoirfairelinux.com/
