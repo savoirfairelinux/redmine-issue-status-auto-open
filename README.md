@@ -71,4 +71,5 @@ Repositories / Development website / Bug Tracker:
 Do not hesitate to join us and post comments, suggestions, questions and general feedback directly on the issues tracker.
 
 **Author :** David Côté-Tremblay <david.cote-tremblay@savoirfairelinux.com>
+
 **Website :** https://www.savoirfairelinux.com/
