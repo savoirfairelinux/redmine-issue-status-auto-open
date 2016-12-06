@@ -24,7 +24,7 @@ Minimum system requirements
 ---------------------------
 
 * GNU/Linux operating system
-* Redmine >= 3.2
+* Redmine ~3.2
 * Ruby on Rails >= 4.2
 * Ruby >= 1.9.3
 * Git >= 2.1.4
