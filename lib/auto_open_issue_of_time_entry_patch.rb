@@ -41,8 +41,8 @@ module AutoOpenIssueOfTimeEntryPatch
 
     def auto_open_issue
 
-        unless valid? then return end
-        unless Setting.plugin_redmine_issue_status_auto_open['open_issue_status'] then return end
+        return unless Setting.plugin_redmine_issue_status_auto_open['open_issue_status']
+        return if !valid? or self.issue.nil?
 
         issue_status_open = IssueStatus.find Setting.plugin_redmine_issue_status_auto_open['open_issue_status']
 
