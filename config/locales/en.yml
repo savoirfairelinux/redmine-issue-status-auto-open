@@ -1,2 +1,4 @@
 en:
     open_issue_status: Open Issue Status
+    affecting_trackers: Affecting trackers
+    auto_open_issue_statuses_only_when_in_affecting_trackers: Automatically open issues only when they're into affecting trackers

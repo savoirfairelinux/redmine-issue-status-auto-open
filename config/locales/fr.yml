@@ -1,2 +1,4 @@
 fr:
     open_issue_status: Status de demande ouvert
+    affecting_trackers: Trackers affectant
+    auto_open_issue_statuses_only_when_in_affecting_trackers: Ouvre automatiquement les demandes qui sont dans les trackers affectants

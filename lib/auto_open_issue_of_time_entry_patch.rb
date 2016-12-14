@@ -26,7 +26,8 @@ module AutoOpenIssueOfTimeEntryPatch
 
     def set_status_if_needed(issue, issue_status)
 
-        if issue.status.position < issue_status.position then
+        in_affecting_trackers = Setting.plugin_redmine_issue_status_auto_open['affecting_trackers'].map(&:to_i).include? issue.tracker_id
+        if issue.status.position < issue_status.position and in_affecting_trackers then
             if issue.current_journal.nil?
                 issue.init_journal User.current
                 issue.send(:current_journal).send(:add_detail, 'attr', 'status', issue.status, issue_status)

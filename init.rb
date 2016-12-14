@@ -28,6 +28,7 @@ Redmine::Plugin.register :redmine_issue_status_auto_open do
 
     settings :default => {
         'open_issue_status' => nil,
+        :affecting_trackers => Tracker.all.pluck(:id),
     },  :partial => 'sfl_issue_status_auto_open_settings'
 
 end

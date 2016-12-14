@@ -55,7 +55,9 @@ Configuration procedure
 
 Once installed, to configure the plugin you will first need to go to `Administration -> Plugins -> Issue Status Auto Open -> Configuration`
 
-When you're there, you have a single input to configure the plugin : The 'open' status.
+When you're there, you have two inputs to configure the plugin : The 'open' status and the affecting trackers.
+
+You can choose on which trackers the issue status auto open will be enabled. Just select the trackers in the "affecting trackers" choices.
 
 ![Plugin settings screenshot](https://github.com/savoirfairelinux/redmine-issue-status-auto-open/raw/master/screenshots/settings.jpg)
 

@@ -5,3 +5,9 @@
   <label><%= l(:open_issue_status) %></label><%= select_tag("settings[open_issue_status]", options_from_collection_for_select(IssueStatus.all, :id, :name, @settings[:open_issue_status])) %>
 </p>
 <br/>
+<p>
+	<label><%= l(:affecting_trackers) %> </label><%= select_tag("settings[affecting_trackers]", options_from_collection_for_select(Tracker.all, :id, :name, (@settings == '') ? [] : @settings[:affecting_trackers]), :multiple => true) %>
+	<br/>
+	<i>* <%= l(:auto_open_issue_statuses_only_when_in_affecting_trackers) %>.</i>
+</p>
+<br/>
