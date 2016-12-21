@@ -31,4 +31,4 @@ Redmine::Plugin.register :redmine_issue_status_auto_open do
         :affecting_trackers => Tracker.all.pluck(:id),
     },  :partial => 'sfl_issue_status_auto_open_settings'
 
-end
+end if ActiveRecord::Base.connection.table_exists? Setting.table_name
